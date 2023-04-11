@@ -14,13 +14,13 @@ export class CryptomusService implements ICryptomusService {
 
     getHeader(payload: string) {
         const sign = crypto
-        .createHash('md5')
-        .update(Buffer.from(payload).toString('base64') + this.apiKey)
+        .createHash("md5")
+        .update(Buffer.from(payload).toString("base64") + this.apiKey)
         .digest("hex");
 
         return {
-            sign,
             merchant: this.merchantId,
+            sign,
         };
     }
 
@@ -29,7 +29,7 @@ export class CryptomusService implements ICryptomusService {
             const payload = {
                 amount: amount.toString(),
                 currency: "USD",
-                order_id: orderId
+                order_id: orderId,
             };
     
             const { data } = await axios.post<CreatePaymentResult>(

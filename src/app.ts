@@ -3,7 +3,7 @@ import LocalSession from "telegraf-session-local";
 import { Command } from "./commands/command.class";
 import { StartCommand } from "./commands/start.command";
 import { SocialsCommand } from "./commands/socials.command";
-import { PayCommand } from "./commands/pay.command";
+import { DonateCommand } from "./commands/donate.command";
 import { ConfigService } from "./config/config.service";
 import { DatabaseService } from "./database/database.service";
 import { CryptomusService } from "./cryptomus/cryptomus.service";
@@ -35,7 +35,7 @@ class Bot {
         this.commands = [
             new StartCommand(this.bot),
             new SocialsCommand(this.bot),
-            new PayCommand(this.bot, this.cryptomusService, this.databaseService)
+            new DonateCommand(this.bot, this.cryptomusService, this.databaseService)
         ]
         for (const command of this.commands) {
             command.handle();
