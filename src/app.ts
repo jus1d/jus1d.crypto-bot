@@ -20,11 +20,9 @@ class Bot {
 
     init() {
         this.commands = [ new StartCommand(this.bot) ];
-
         for (const command of this.commands) {
             command.handle();
         }
-
         this.bot.launch();
     }
 
