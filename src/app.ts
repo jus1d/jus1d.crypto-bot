@@ -4,7 +4,6 @@ import { IConfigService } from "./config/config.interface";
 import { ConfigService } from "./config/config.service";
 import { IBotContext } from "./context/context.interface";
 import { StartCommand } from "./commands/start.command";
-import { GitHubCommand } from "./commands/github.command";
 import { SocialsCommand } from "./commands/socials.command";
 import LocalSession from "telegraf-session-local";
 
@@ -23,7 +22,6 @@ class Bot {
     init() {
         this.commands = [
             new StartCommand(this.bot),
-            new GitHubCommand(this.bot),
             new SocialsCommand(this.bot)
         ]
         for (const command of this.commands) {
