@@ -31,7 +31,7 @@ export class CryptomusService implements ICryptomusService {
                 currency: "USD",
                 order_id: orderId,
             };
-    
+            
             const { data } = await axios.post<CreatePaymentResult>(
                 'https://api.cryptomus.com/v1/payment', 
                 payload, {
@@ -41,7 +41,7 @@ export class CryptomusService implements ICryptomusService {
             return data;
 
         } catch (error) {
-            console.error(error);
+            console.error('Error with creating payment');
         }
 
     }
