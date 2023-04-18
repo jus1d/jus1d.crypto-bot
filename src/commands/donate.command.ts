@@ -22,30 +22,7 @@ export class DonateCommand extends Command {
                 Markup.button.callback("10$", "donate_10_usd"),
                 Markup.button.callback("20$", "donate_20_usd"),
                 Markup.button.callback("100$", "donate_100_usd")
-            ]))
-
-            
-            // const res = await this.cryptomusService.createPayment(1, uuidv4());
-
-            // if (!res) {
-            //     ctx.reply('Error with payment creating');
-            //     return;
-            // }
-
-            // await this.databaseService.payment.create({
-            //     data: {
-            //         uuid: res.result.uuid,
-            //         orderId: res.result.order_id,
-            //         status: res.result.status,
-            //         amount: res.result.amount,
-            //         paymentAmount: res.result.payer_amount,
-            //         isFinal: res.result.is_final,
-            //         url: res.result.url,
-            //         chatId: ctx.from.id
-            //     }
-            // });
-
-            // ctx.reply(res.result.url);
+            ]));
         });
 
         this.bot.action('donate_1_usd', async (ctx) => {
