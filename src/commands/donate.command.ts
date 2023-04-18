@@ -205,7 +205,7 @@ export class DonateCommand extends Command {
 
             ctx.editMessageText(`Click here to send 100$ donation 👇`, Markup.inlineKeyboard([
                 Markup.button.url('Donate!', res.result.url)
-            ]))
+            ]));
         });
     }
 }
